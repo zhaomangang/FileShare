@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-04-09T17:00:30
+# Project created by QtCreator 2019-02-24T13:13:55
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = ShareClient
+TARGET = server
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -26,21 +26,19 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwidget.cpp \
-    landwidget.cpp
+        widget.cpp \
+    serve.cpp \
+    tcpclientsocket.cpp
 
 HEADERS += \
-        mainwidget.h \
-    landwidget.h
+        widget.h \
+    serve.h \
+    tcpclientsocket.h
 
 FORMS += \
-        mainwidget.ui \
-    landwidget.ui
+        widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    pic.qrc
